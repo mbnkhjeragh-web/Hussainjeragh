@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Polo Room — A Ralph Lauren Tribute</title>
+  <meta name="description" content="An immersive, hand-built web scene inspired by Polo Ralph Lauren — preppy Americana rendered in pure HTML & CSS." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient controls -->
+  <aside class="controls" aria-label="Room controls">
+    <h2 class="controls__title">The Polo Room</h2>
+    <button class="ctrl" data-toggle="lamps" aria-pressed="true">
+      <span class="ctrl__dot"></span> Lamps
+    </button>
+    <button class="ctrl" data-toggle="fire" aria-pressed="true">
+      <span class="ctrl__dot"></span> Fireplace
+    </button>
+    <button class="ctrl" data-toggle="day" aria-pressed="false">
+      <span class="ctrl__dot"></span> Daylight
+    </button>
+    <button class="ctrl" data-toggle="rain" aria-pressed="false">
+      <span class="ctrl__dot"></span> Rain
+    </button>
+  </aside>
+
+  <!-- The scene -->
+  <main class="stage" id="stage">
+    <div class="room" id="room">
+
+      <!-- Back wall with wood wainscoting + oxford stripe upper -->
+      <div class="wall">
+        <div class="wall__stripes"></div>
+        <div class="wall__wainscot">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="crown-molding"></div>
+        <div class="chair-rail"></div>
+      </div>
+
+      <!-- Floor: herringbone parquet -->
+      <div class="floor"><div class="floor__rug"></div></div>
+
+      <!-- Window with garden / evening view -->
+      <div class="window">
+        <div class="window__view"></div>
+        <div class="window__muntins">
+          <span class="v"></span><span class="v"></span>
+          <span class="h"></span><span class="h"></span>
+        </div>
+        <div class="window__frame"></div>
+        <div class="drape drape--l"></div>
+        <div class="drape drape--r"></div>
+      </div>
+
+      <!-- Fireplace -->
+      <div class="fireplace">
+        <div class="fireplace__mantel"></div>
+        <div class="fireplace__surround"></div>
+        <div class="fireplace__hearth">
+          <div class="fire" id="fire">
+            <span class="flame f1"></span>
+            <span class="flame f2"></span>
+            <span class="flame f3"></span>
+            <span class="flame f4"></span>
+            <span class="log log--a"></span>
+            <span class="log log--b"></span>
+            <div class="ember"></div>
+          </div>
+        </div>
+        <!-- Mantel objects -->
+        <div class="mantel-objs">
+          <div class="mo mo--clock"></div>
+          <div class="mo mo--vase"></div>
+          <div class="mo mo--horse" title="Bronze polo pony"></div>
+          <div class="mo mo--books"></div>
+        </div>
+        <!-- Equestrian portrait above mantel -->
+        <div class="portrait" title="The Polo Player">
+          <div class="portrait__frame">
+            <div class="portrait__canvas">
+              <div class="rider"></div>
+              <div class="pony"></div>
+              <div class="mallet"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bookcase -->
+      <div class="bookcase">
+        <div class="shelf">
+          <span class="bk c1"></span><span class="bk c2"></span><span class="bk c3"></span>
+          <span class="bk c4"></span><span class="bk c5"></span><span class="bk lean"></span>
+        </div>
+        <div class="shelf">
+          <span class="bk c3"></span><span class="bk c1"></span><span class="bk c5"></span>
+          <span class="bk c2"></span><span class="bk c4"></span><span class="bk c3"></span>
+        </div>
+        <div class="shelf">
+          <span class="bk c5"></span><span class="bk c4"></span><span class="bk lean"></span>
+          <span class="bk c1"></span><span class="bk c2"></span><span class="bk c3"></span>
+        </div>
+        <div class="shelf shelf--decor">
+          <div class="globe"></div>
+          <span class="bk c2"></span><span class="bk c1"></span>
+          <div class="trophy"></div>
+        </div>
+      </div>
+
+      <!-- Tufted club chair -->
+      <div class="chair">
+        <div class="chair__back"></div>
+        <div class="chair__arm chair__arm--l"></div>
+        <div class="chair__arm chair__arm--r"></div>
+        <div class="chair__seat"></div>
+        <div class="chair__cushion"></div>
+        <div class="chair__pillow"></div>
+      </div>
+
+      <!-- Side table + brass lamp + drink -->
+      <div class="side-table">
+        <div class="lamp">
+          <div class="lamp__glow"></div>
+          <div class="lamp__shade"></div>
+          <div class="lamp__neck"></div>
+          <div class="lamp__base"></div>
+        </div>
+        <div class="tumbler"></div>
+        <div class="table__top"></div>
+        <div class="table__leg"></div>
+      </div>
+
+      <!-- Steamer trunk / ottoman -->
+      <div class="trunk">
+        <div class="trunk__lid"></div>
+        <div class="trunk__strap trunk__strap--l"></div>
+        <div class="trunk__strap trunk__strap--r"></div>
+        <div class="trunk__body"></div>
+      </div>
+
+      <!-- Floating dust motes / warm particles -->
+      <div class="motes" id="motes"></div>
+      <!-- Rain overlay on the window -->
+      <div class="rain" id="rain"></div>
+      <!-- Warm vignette -->
+      <div class="vignette"></div>
+    </div>
+
+    <p class="caption">A fan-made tribute · not affiliated with Ralph Lauren Corporation</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
