@@ -33,6 +33,16 @@ python3 -m http.server 8000
 | `styles.css` | All styling, layout, and animation |
 | `script.js`  | Ambient controls & parallax |
 
+## Bonus: `polymer.html`
+
+A separate, self-contained **polymerization animation**. Free monomers drift
+through solution under Brownian motion and bond on contact into wriggling
+polymer chains simulated with Verlet spring physics. Controls let you add
+monomers, trigger a *polymerize burst*, change the temperature (heat), and
+stir the solution by clicking/dragging. Live stats track chain count, the
+longest chain, and the degree of polymerization. Open `polymer.html` in any
+browser — no dependencies.
+
 ---
 
 _A fan-made tribute. Not affiliated with or endorsed by Ralph Lauren Corporation._
