@@ -126,6 +126,8 @@ footer{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
 const f=document.getElementById('sampleForm');
 f.querySelector('[name=_next]').value=new URL('thanks.html',location.href).href;
 f.addEventListener('submit',()=>{
+  const proj=(f.querySelector('[name="Project name"]').value||'').trim();
+  f.querySelector('[name=_subject]').value='New OFWML sample submission – '+(proj||'sample received');
   document.getElementById('testsField').value=[...f.querySelectorAll('.test:checked')].map(c=>c.value).join(', ')||'None selected';
   const b=f.querySelector('button');b.disabled=true;b.textContent='Sending… · جاري الإرسال';
 });
