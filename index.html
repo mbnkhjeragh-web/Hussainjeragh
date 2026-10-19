@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>OFWML Sample Submission</title>
+<title>OFWML Sample Received Log</title>
 <style>
 :root{--bg:#f4f6f8;--card:#fff;--ink:#14212b;--muted:#5b6b78;--line:#d7dee4;--accent:#0b5f7a;--accent-ink:#fff}
 *{box-sizing:border-box}
@@ -35,9 +35,10 @@ footer{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
 <body>
 <div class="wrap">
 <header>
-  <div class="org">KISR · Petroleum Research Center · OFWML</div>
-  <h1>Sample Submission</h1>
-  <p class="sub ar">نموذج تسليم العينات</p>
+  <div class="org">Petroleum Research Center, Ahmadi</div>
+  <h1>Sample Received Log Book</h1>
+  <p class="sub">Oil Field Water Management Lab</p>
+  <p class="sub ar">سجل استلام العينات</p>
 </header>
 
 <form id="sampleForm" action="https://formsubmit.co/Hjeragh@kisr.edu.kw" method="POST">
@@ -46,89 +47,71 @@ footer{text-align:center;color:var(--muted);font-size:13px;margin-top:18px}
   <input type="hidden" name="_template" value="table">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_next" value="">
-  <input type="hidden" name="Tests requested" id="testsField" value="">
   <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
 
   <div class="f">
-    <label for="project">Project name <span class="req">*</span><span class="ar">اسم المشروع</span></label>
-    <input id="project" name="Project name" type="text" required>
+    <label for="date">Request Date <span class="req">*</span><span class="ar">تاريخ الطلب</span></label>
+    <input id="date" name="Request Date" type="date" required>
   </div>
 
   <div class="row">
     <div class="f">
-      <label for="client">Your name <span class="req">*</span></label>
-      <input id="client" name="Client name" type="text" required>
+      <label for="requestor">Requestor <span class="req">*</span></label>
+      <input id="requestor" name="Requestor" type="text" required>
     </div>
     <div class="f">
-      <label for="org">Organization</label>
-      <input id="org" name="Organization" type="text" placeholder="e.g. KOC">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="f">
-      <label for="email">Email <span class="req">*</span></label>
-      <input id="email" name="email" type="email" required>
-    </div>
-    <div class="f">
-      <label for="phone">Phone</label>
-      <input id="phone" name="Phone" type="tel">
+      <label for="project">Project <span class="req">*</span></label>
+      <input id="project" name="Project" type="text" required>
     </div>
   </div>
 
   <div class="row">
     <div class="f">
-      <label for="n">No. of samples <span class="req">*</span></label>
-      <input id="n" name="Number of samples" type="number" min="1" required>
+      <label for="field">Field</label>
+      <input id="field" name="Field" type="text">
     </div>
     <div class="f">
-      <label for="type">Sample type</label>
-      <select id="type" name="Sample type">
-        <option>Produced water</option>
-        <option>Injection water</option>
-        <option>Effluent water</option>
-        <option>Seawater</option>
-        <option>Polymer solution</option>
-        <option>Other</option>
-      </select>
+      <label for="by">Submitted by <span class="req">*</span></label>
+      <input id="by" name="Submitted by" type="text" required>
     </div>
   </div>
 
   <div class="f">
-    <label for="ids">Sample IDs / well names <span class="ar">أرقام العينات</span></label>
-    <input id="ids" name="Sample IDs" type="text" placeholder="e.g. W-101, W-102">
+    <label for="desc">Sample Description <span class="req">*</span><span class="ar">وصف العينة</span></label>
+    <textarea id="desc" name="Sample Description" required placeholder="e.g. T-101 A/A + Pr."></textarea>
   </div>
 
-  <div class="f">
-    <label>Tests requested <span class="ar">الفحوصات المطلوبة</span></label>
-    <div class="checks">
-      <label><input type="checkbox" class="test" value="pH"> pH</label>
-      <label><input type="checkbox" class="test" value="Conductivity / TDS"> Conductivity / TDS</label>
-      <label><input type="checkbox" class="test" value="Turbidity"> Turbidity</label>
-      <label><input type="checkbox" class="test" value="Density"> Density</label>
-      <label><input type="checkbox" class="test" value="Viscosity"> Viscosity</label>
-      <label><input type="checkbox" class="test" value="Oil in water"> Oil in water</label>
-      <label><input type="checkbox" class="test" value="Ions analysis"> Ions analysis</label>
-      <label><input type="checkbox" class="test" value="FTIR"> FTIR</label>
+  <div class="row">
+    <div class="f">
+      <label for="n">No. of Sample <span class="req">*</span></label>
+      <input id="n" name="No. of Sample" type="text" required placeholder="e.g. 2+1">
+    </div>
+    <div class="f">
+      <label for="analysis">Analysis Required <span class="req">*</span></label>
+      <input id="analysis" name="Analysis Required" type="text" required placeholder="e.g. API" list="analyses">
+      <datalist id="analyses">
+        <option value="API"><option value="pH"><option value="Conductivity / TDS"><option value="Turbidity">
+        <option value="Density"><option value="Viscosity"><option value="Oil in water"><option value="Ions analysis"><option value="FTIR">
+      </datalist>
     </div>
   </div>
 
   <div class="f">
-    <label for="notes">Notes <span class="ar">ملاحظات</span></label>
-    <textarea id="notes" name="Notes" placeholder="Other tests, deadlines, special handling…"></textarea>
+    <label for="remarks">Remarks <span class="ar">ملاحظات</span></label>
+    <textarea id="remarks" name="Remarks"></textarea>
   </div>
 
   <button type="submit">Submit · إرسال</button>
 </form>
-<footer>Oil-Field Water Management Laboratory · Kuwait Institute for Scientific Research</footer>
+<footer>Receive By and LIMS Job ID are filled in by the lab.<br>Oil Field Water Management Lab · KISR</footer>
 </div>
 <script>
 const f=document.getElementById('sampleForm');
 f.querySelector('[name=_next]').value=new URL('thanks.html',location.href).href;
+const d=new Date();document.getElementById('date').value=new Date(d-d.getTimezoneOffset()*6e4).toISOString().slice(0,10);
 f.addEventListener('submit',()=>{
-  const proj=(f.querySelector('[name="Project name"]').value||'').trim();
+  const proj=(f.querySelector('[name="Project"]').value||'').trim();
   f.querySelector('[name=_subject]').value='New OFWML sample submission – '+(proj||'sample received');
-  document.getElementById('testsField').value=[...f.querySelectorAll('.test:checked')].map(c=>c.value).join(', ')||'None selected';
   const b=f.querySelector('button');b.disabled=true;b.textContent='Sending… · جاري الإرسال';
 });
 </script>
